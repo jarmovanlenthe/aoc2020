@@ -19,7 +19,7 @@ class Bag:
     def amount_of_children(self):
         if not self.children:
             return 0
-        return sum([a for a, c in self.children]) + sum(a * c.amount_of_children() for a, c in self.children)
+        return sum(a + a * c.amount_of_children() for a, c in self.children)
 
     @staticmethod
     def find(color):
